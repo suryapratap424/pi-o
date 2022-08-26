@@ -106,6 +106,10 @@
                 are trademarks owned by Pi-o Pvt. Ltd. © 2022 All rights reserved. Enjoy responsibly.</p>
         </div>
         <script>
+            history.scrollRestoration = "manual";
+            $(window).on('beforeunload', function () {
+                $(window).scrollTop(0);
+            });
             $('body').css({ overflow: 'hidden' })
         </script>
     </div>
