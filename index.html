@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pi-o</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- <script src="https://kit.fontawesome.com/3f04a3eb9b.js" crossorigin="anonymous"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        #logo {
+            max-width: 300px;
+            width: 70%;
+            color: white;
+        }
+
+        .filter-list {
+            text-align: center;
+            padding: 5rem 0;
+            text-transform: uppercase;
+            width: 100%;
+        }
+
+        .filter-list h3 {
+            display: block;
+        }
+
+        .filter-list .btn {
+            text-transform: uppercase;
+            padding: 0.5rem 1.5rem;
+        }
+
+        /* .filter-list .btn.active {
+            background: #2e7ab5;
+            color: #fff;
+        } */
+
+
+        .product {
+            transition: 0.5s;
+            margin-bottom: 2em;
+        }
+
+        .product img {
+            width: 100%;
+            height: 400px;
+        }
+
+        .product .info {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            padding: 0.5em 1em;
+            margin: 0 0 0.5em 0;
+            border-bottom: 2px solid #0dcaf0;
+            background-color: #fff;
+        }
+
+        .product .info .name {
+            flex: 2 0 0;
+            font-size: 1.3em;
+            font-weight: 400;
+            line-height: 1.4em;
+            text-transform: capitalize;
+            color: #0dcaf0;
+        }
+
+        .product .info .price {
+            font-size: 1.5em;
+            font-weight: 600;
+            color: #27f00d;
+        }
+
+        .product .info .price .original-price {
+            color: #e00;
+            text-decoration: line-through;
+            font-size: 0.7em;
+        }
+
+        .confrim-screen {
+            position: absolute;
+            height: 100vh;
+            width: 100vw;
+            z-index: 999;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="d-flex justify-content-center align-items-center bg-dark bg-opacity-75 confrim-screen">
+        <div class="d-flex flex-column align-items-center text-white">
+            <h4>This website is for People aged above 21</h4>
+            <h3>Are you above 21?</h3>
+            <div class="btn-group-in mb-5">
+                <button type="button" class="btn btn-primary white"
+                    onclick="$('.confrim-screen').remove();$('body').css({overflow:'auto'})">Yes</button>
+                <button type="button" class="btn btn-primary white" onclick="history.back();">No</button>
+            </div>
+            <p>By entering this site, you are agreeing to our Terms & Conditions, Privacy Policy and by continuing to
+                browse this site you are agreeing to accept our use of cookies. Booozie endorses responsible and
+                moderate drinking. Please share responsibly and do not forward this content on to anyone who is under
+                the legal drinking age in their country of residence. Pi-o ® Product of India. Pi-o logo designs
+                are trademarks owned by Pi-o Pvt. Ltd. © 2022 All rights reserved. Enjoy responsibly.</p>
+        </div>
+        <script>
+            $('body').css({ overflow: 'hidden' })
+        </script>
+    </div>
+    <!-- ------------------------------navbar------------------------- -->
+    <header class="p-3 bg-dark text-white">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                    <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
+                        <use xlink:href="#bootstrap"></use>
+                    </svg>
+                </a>
+
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
+                    <li><a href="#" class="nav-link px-2 text-white">Features</a></li>
+                    <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
+                    <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
+                    <li><a href="#" class="nav-link px-2 text-white">About</a></li>
+                </ul>
+
+                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+                    <input type="search" class="form-control form-control-dark text-white bg-dark"
+                        placeholder="Search..." aria-label="Search">
+                </form>
+
+                <div class="text-end">
+                    <button type="button" class="btn btn-outline-light me-2">Login</button>
+                    <button type="button" class="btn btn-warning">Sign-up</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ------------------------------heading------------------------- -->
+    <div class="bg-dark text-secondary px-4 py-5 text-center">
+        <div class="py-5">
+            <object id="logo" type="image/svg+xml" data="logo.svg">Pi-O</object>
+            <h1 class="display-5 fw-bold text-white">We are here to quench your thirst</h1>
+            <div class="col-lg-6 mx-auto">
+                <p class="fs-5 mb-4">ever wished that some one comes to your house to deliver your favourite and loved
+                    liquor to you.</p>
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                    <a href="tel:+919783669599" class="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold">Order Now</a>
+                    <button type="button" class="btn btn-outline-light btn-lg px-4">Contact Us</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ------------------------------categories------------------------- -->
+    <div class="px-5 bg-dark text-white">
+        <div class="row">
+            <div class="filter-list" id="filter">
+                <h4>Filter</h4>
+                <button class="btn btn-outline-info fw-bold filter-button active" data-filter="all">All</button>
+            </div>
+        </div>
+        <div class="row" id="box">
+        </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+<script>
+    x = [
+        {
+            name: "beer",
+            price: 800,
+            type: "beer"
+        },
+        {
+            name: "rumk",
+            price: 1000,
+            type: "rum"
+        },
+        {
+            name: "beer3",
+            price: 600,
+            type: "beer"
+        },
+        {
+            name: "rum5",
+            price: 700,
+            type: "rum"
+        },
+        {
+            name: "gini",
+            price: 500,
+            type: "gin"
+        },
+        {
+            name: "vodkaa",
+            price: 900,
+            type: "vodka"
+        },
+    ]
+    new Set(x.map(e => e.type)).forEach(f => $("#filter").append(`<button class="btn text-secondary filter-button" data-filter="${f}">${f}</button>`))
+</script>
+<script>
+    $(document).ready(function () {
+        $(".filter-button").click(function () {
+            var value = $(this).attr('data-filter');
+            if (value == "all") {
+                $('.filter').show('1000');
+            } else {
+                $(".filter").not('.' + value).hide('3000');
+                $('.filter').filter('.' + value).show('3000');
+            }
+            if ($(".filter-button").removeClass("active")) {
+                $(this).removeClass("active");
+            }
+            if ($(".filter-button").removeClass("btn-outline-info")) {
+                $(this).removeClass("btn-outline-info");
+            }
+            if ($(".filter-button").removeClass("fw-bold")) {
+                $(this).removeClass("fw-bold");
+            }
+            if ($(".filter-button").addClass("text-secondary")) {
+                $(this).addClass("text-secondary");
+            }
+            $(this).addClass("active");
+            $(this).addClass("btn-outline-info");
+            $(this).addClass("fw-bold");
+            $(this).removeClass("text-secondary");
+        });
+        x.forEach(beer => $("#box").append(`
+            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 product filter ${beer.type}">
+                <img src="./wine.jpg" title="${beer.name}" alt="${beer.name}">
+                <div class="info bg-dark">
+                    <div class="name">
+                        ${beer.name}
+                    </div>
+                    <div class="price">
+                        ${beer.price}
+                    </div>
+                </div>
+                <div class="text-center">
+                    <a href="tel:+919783669599" class="btn btn-outline-info btn-lg px-4 mx-5">
+                        Order Now <i class="fa fa-solid fa-phone"></i>
+                    </a>
+                </div>
+            </div>`));
+    });
+</script>
+
+</html>
